@@ -4,8 +4,11 @@ import {
   View,
 } from 'react-native';
 import BigButton from './BigButton';
+import ImageButton from './ImageButton';
 import styles from '../styles';
 import variables from '../styles/variables';
+import check from '../assets/images/check.png';
+import backspace from '../assets/images/backspace.png';
 
 export default class extends React.Component {
 
@@ -43,21 +46,15 @@ export default class extends React.Component {
         <Text style={{ fontSize: 40, textAlign: 'center' }}>{answer}</Text>
         <View style={styles.row}>
           {[7, 8, 9, 4, 5, 6, 1, 2, 3, '<', 0, 'v'].map((item, index) => (
-              <View style={[styles.col, styles.col4]} key={index}>
-                { item === '<' && (<BigButton
-                    text="<"
-                    stretch
-                    textSize={40}
-                    textColor={variables.colors.lithium}
-                    backgroundColor={variables.colors.raven}
+              <View style={[styles.col, styles.col4, {flexDirection: 'row', justifyContent: 'center'}]} key={index}>
+                { item === '<' && (<ImageButton
+                    image={backspace}
+                    backgroundColor="#ffffff"
                     onPress={() => this.backspace()}
                 />) }
-                { item === 'v' && (<BigButton
-                  text="v"
-                  stretch
-                  textSize={40}
-                  textColor={variables.colors.lithium}
-                  backgroundColor={variables.colors.lime}
+                { item === 'v' && (<ImageButton
+                  image={check}
+                  backgroundColor="#ffffff"
                   onPress={() => this.checkAnswer()}
                   />) }
                 { typeof item === 'number' && (
