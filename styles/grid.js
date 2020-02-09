@@ -3,6 +3,9 @@ import variables from './variables';
 export const container = {
   paddingLeft: variables.gutterWidth,
   paddingRight: variables.gutterWidth,
+  paddingTop: variables.gutterWidth,
+  paddingBottom: variables.gutterWidth,
+  flex: 1,
 };
 
 export const row = {
