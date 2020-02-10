@@ -7,10 +7,11 @@ import {
 import styles from '../styles';
 import variables from '../styles/variables';
 import BigButton from '../components/BigButton';
+import LinkButton from '../components/LinkButton';
 
 export default function PracticeScreen({navigation}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {justifyContent: 'space-between'}]}>
       <View style={styles.row}>
       {['*', 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
           <View
@@ -27,6 +28,11 @@ export default function PracticeScreen({navigation}) {
             />
           </View>
       ))}
+      </View>
+      <View style={{flexDirection: 'row'}}>
+        <View style={{ flex: 1, alignItems: 'center'}}>
+        <LinkButton text="Licences" onPress={() => navigation.navigate('License')}/>
+        </View>
       </View>
     </View>
   );
