@@ -50,3 +50,7 @@ export const num9 = {
   color: variables.numbersColors.num9.fg,
 };
 
+export const num10 = {
+  backgroundColor: variables.numbersColors.num10.bg,
+  color: variables.numbersColors.num10.fg,
+};

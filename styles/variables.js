@@ -1,23 +1,23 @@
 const colors = {
+  peach: '#fc889f',
+  lychee: '#fb6a87',
   lava: '#fe7877',
   tangerine: '#fd925e',
   pumpkin: '#fcb100',
   lemon: '#f7d021',
-  choco: '#b79470',
   lime: '#9ff23a',
+  mint: '#88e18e',
   veggie: '#2dcc70',
   eco: '#6ad922',
-  mint: '#88e18e',
+  turquoise: '#70ffd9',
   aqua: '#2acec6',
   ice: '#04e6f7',
-  turquoise: '#70ffd9',
-  mizu: '#99e1ff',
   sky: '#55cdff',
   denim: '#5fa9ff',
   eggplant: '#c29eff',
   pink: '#fb88ff',
-  peach: '#fc889f',
-  lychee: '#fb6a87',
+  mizu: '#99e1ff',
+  choco: '#b79470',
   raven: '#394151',
   slate: '#4c566c',
   charcoal: '#707889',
@@ -57,7 +57,7 @@ const variables = {
     },
 
     num5: {
-      bg: colors.choco,
+      bg: colors.lemon,
       fg: colors.mochi,
     },
 
@@ -78,6 +78,10 @@ const variables = {
 
     num9: {
       bg: colors.turquoise,
+      fg: colors.mochi,
+    },
+    num10: {
+      bg: colors.veggie,
       fg: colors.mochi,
     },
 

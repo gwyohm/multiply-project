@@ -5,12 +5,18 @@ import { createStackNavigator } from 'react-navigation-stack';
 import PracticeScreen from './screens/PracticeScreen';
 import TablePracticeScreen from './screens/TablePracticeScreen';
 import LicenceScreen from './screens/LicenceScreen';
+import TableViewScreen from './screens/TableViewScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
+import ChooseTableScreen from './screens/ChooseTableScreen';
 
 const Stack = createStackNavigator({
+  Welcome: WelcomeScreen,
+  ChooseTable: ChooseTableScreen,
   Practice: PracticeScreen,
+  TableView: TableViewScreen,
   TablePractice: TablePracticeScreen,
   License: LicenceScreen,
-});
+}, { initialRouteName: 'Welcome' });
 
 
 export default createAppContainer(Stack);
