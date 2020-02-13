@@ -8,6 +8,7 @@ import LicenceScreen from './screens/LicenceScreen';
 import TableViewScreen from './screens/TableViewScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import ChooseTableScreen from './screens/ChooseTableScreen';
+import GraphicTableScreen from './screens/GraphicTableScreen';
 
 const Stack = createStackNavigator({
   Welcome: WelcomeScreen,
@@ -16,6 +17,7 @@ const Stack = createStackNavigator({
   TableView: TableViewScreen,
   TablePractice: TablePracticeScreen,
   License: LicenceScreen,
+  GraphicTable: GraphicTableScreen,
 }, { initialRouteName: 'Welcome' });
 
 

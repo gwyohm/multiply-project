@@ -10,7 +10,8 @@ export default function ({ navigation }) {
       >
         <Button title="Réviser" onPress={() => navigation.navigate('ChooseTable')}/>
         <Button title="S'entrainer" onPress={() => navigation.navigate('Practice')}/>
-        <Button title="Challenge !"/>
+        <Button title="Challenge !" onPress={() => {}}/>
+        <Button title="Bonus !" onPress={() => navigation.navigate('GraphicTable')}/>
         <LinkButton text="Licences" onPress={() => navigation.navigate('License')}/>
       </View>
   );
