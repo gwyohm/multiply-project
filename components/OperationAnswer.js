@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   View,
@@ -9,6 +9,42 @@ import styles from '../styles';
 import variables from '../styles/variables';
 import check from '../assets/images/check.png';
 import backspace from '../assets/images/backspace.png';
+
+function a () {
+  const [answer, setAnswer] = useState(null);
+  const answerText = answer || ' ';
+  return (
+      <View style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between'}}>
+        <Text style={{ fontSize: 40, textAlign: 'center' }}>{answerText}</Text>
+        <View style={styles.row}>
+          {[7, 8, 9, 4, 5, 6, 1, 2, 3, '<', 0, 'v'].map((item, index) => (
+              <View style={[styles.col, styles.col4, {flexDirection: 'row', justifyContent: 'center'}]} key={index}>
+                { item === '<' && (<ImageButton
+                    image={backspace}
+                    backgroundColor="#ffffff"
+                    onPress={() => this.backspace()}
+                />) }
+                { item === 'v' && (<ImageButton
+                    image={check}
+                    backgroundColor="#ffffff"
+                    onPress={() => this.checkAnswer()}
+                />) }
+                { typeof item === 'number' && (
+                    <BigButton
+                        text={item}
+                        stretch
+                        textSize={40}
+                        textColor={variables.numbersColors[`num${item}`].fg}
+                        backgroundColor={variables.numbersColors[`num${item}`].bg}
+                        onPress={() => this.input(item)}
+                    />
+                )}
+              </View>
+          ))}
+        </View>
+      </View>
+  );
+}
 
 export default class extends React.Component {
 

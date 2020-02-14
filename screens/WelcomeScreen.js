@@ -6,13 +6,29 @@ export default function ({ navigation }) {
 
   return (
       <View
-        style={{flex: 1}}
+        style={{
+          flex: 1,
+          justifyContent: 'space-between',
+          flexDirection: 'column',
+        }}
       >
-        <Button title="Réviser" onPress={() => navigation.navigate('ChooseTable')}/>
-        <Button title="S'entrainer" onPress={() => navigation.navigate('Practice')}/>
-        <Button title="Challenge !" onPress={() => {}}/>
-        <Button title="Bonus !" onPress={() => navigation.navigate('GraphicTable')}/>
-        <LinkButton text="Licences" onPress={() => navigation.navigate('License')}/>
+        <View>
+          <View style={{ paddingTop: 8, paddingBottom: 8 }}>
+            <Button title="Réviser" onPress={() => navigation.navigate('ChooseTable')}/>
+          </View>
+          <View style={{ paddingTop: 8, paddingBottom: 8 }}>
+            <Button title="S'entrainer" onPress={() => navigation.navigate('Practice')}/>
+          </View>
+          <View style={{ paddingTop: 8, paddingBottom: 8 }}>
+            <Button title="Challenge !" onPress={() => navigation.navigate('Challenge')}/>
+          </View>
+          <View style={{ paddingTop: 8, paddingBottom: 8 }}>
+            <Button title="Bonus !" onPress={() => navigation.navigate('GraphicTable')}/>
+          </View>
+        </View>
+        <View style={{alignItems: 'center', paddingBottom: 8}}>
+          <LinkButton text="Crédits" onPress={() => navigation.navigate('License')}/>
+        </View>
       </View>
   );
 }

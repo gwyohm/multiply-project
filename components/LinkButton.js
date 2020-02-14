@@ -9,8 +9,8 @@ const defaultStyle = {
   color: variables.colors.denim,
 }
 
-export default function ({ style = defaultStyle, text, onPress = () => {} }) {
+export default function ({ style = {}, text, onPress = () => {} }) {
   return (
-    <Text style={style} onPress={onPress}>{text}</Text>
+    <Text style={[defaultStyle, style]} onPress={onPress}>{text}</Text>
   );
 }
