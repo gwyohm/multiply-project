@@ -60,7 +60,6 @@ export default function Series ({
           { (!seriesComplete) && (<Feedback
             style={{ width: 50, height: 50 }}
             source={feedback}
-            state={`${x}*${y}`}
           />)}
         </View>
       </View>
