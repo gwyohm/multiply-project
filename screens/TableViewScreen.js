@@ -23,7 +23,10 @@ export default function TableViewScreen({navigation}) {
               style={{flex: 1, flexDirection: 'row', paddingTop: variables.gutterWidth/2, paddingBottom: variables.gutterWidth/2}}
             />
         )) }
-
+        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', marginTop: 8}}>
+          <Button title="S'entrainer" onPress={() => navigation.navigate('TablePractice', { base })}/>
+          <Button title="Challenge" onPress={() => navigation.navigate('ChallengePractice', { table: base })}/>
+        </View>
       </ScrollView>
   );
 }

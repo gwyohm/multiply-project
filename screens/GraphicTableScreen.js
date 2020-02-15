@@ -2,8 +2,8 @@ import React, { useState, useEffect} from 'react';
 import { View, Text } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 export default function GraphicTableScreen({ }) {
-  const [table, setTable] = useState(2);
-  const speed = 12;
+  const [table, setTable] = useState(0);
+  const speed = 50;
   const modulo = 150;
   const dAngle = 2 * Math.PI / modulo;
   const res = [...Array(modulo)]

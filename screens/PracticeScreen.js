@@ -29,11 +29,6 @@ export default function PracticeScreen({navigation}) {
           </View>
       ))}
       </View>
-      <View style={{flexDirection: 'row'}}>
-        <View style={{ flex: 1, alignItems: 'center'}}>
-        <LinkButton text="Licences" onPress={() => navigation.navigate('License')}/>
-        </View>
-      </View>
     </View>
   );
 }

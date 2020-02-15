@@ -1,18 +1,23 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import LinkButton from '../components/LinkButton';
+import styles from '../styles';
 
-export default function ({ navigation }) {
+export default function WelcomeScreen({ navigation }) {
 
   return (
       <View
-        style={{
+        style={[styles.container, {
           flex: 1,
           justifyContent: 'space-between',
           flexDirection: 'column',
-        }}
+          paddingBottom: 4,
+        }]}
       >
         <View>
+          <View style={{ paddingTop: 8, paddingBottom: 8 }}>
+            <Text style={{fontSize: 20, alignSelf: 'center', fontWeight:'bold'}}>Multiplications</Text>
+          </View>
           <View style={{ paddingTop: 8, paddingBottom: 8 }}>
             <Button title="Réviser" onPress={() => navigation.navigate('ChooseTable')}/>
           </View>
@@ -32,3 +37,4 @@ export default function ({ navigation }) {
       </View>
   );
 }
+

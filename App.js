@@ -23,7 +23,7 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator initilalState={{routeName: "Welcome"}}/>
+        <AppNavigator initilalState={{routeName: "Welcome"}} style={styles.container}/>
       </View>
     );
   }
@@ -59,6 +59,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignSelf: 'stretch',
   },
 });
