@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function ({ series = [], table }) {
   const [index, setIndex] = useState(0);
-  const [random] = useState(typeof table !== 'number');
+  const [random] = useState(Number.isNaN(table));
   const nextX = random ? () => Math.floor(Math.random() * 11) : () => table;
   const [x, setX] = useState(nextX());
   const seriesComplete = index >= series.length;
