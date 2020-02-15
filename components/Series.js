@@ -22,6 +22,7 @@ export default function Series ({
   table,
   onStart = () => {},
   onEnd = () => {},
+  onMistake = () => {},
 }) {
   const {
     x,
@@ -39,6 +40,9 @@ export default function Series ({
     }
   });
   const feedback = getFeedback(isCorrectAnswer);
+  if (isCorrectAnswer === false) {
+    onMistake();
+  }
   useEffect(onStart, []);
   return(
     <View style={{

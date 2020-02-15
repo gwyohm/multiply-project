@@ -19,9 +19,16 @@ function shuffle(unshuffled) {
 
 export default function ChallengePracticeScreen({navigation}) {
   const [challengeStart, setChallengeStart] = useState(null);
+  const [challengeFailed, setChallengeFailed] = useState(false);
   const [challengeEnd, setChallengeEnd] = useState(null);
   const table = parseInt(navigation.getParam('table'), 10);
   const series = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  if (challengeFailed) {
+    return (
+      <View style={styles.container}>
+        <Text>Perdu !</Text>
+      </View>);
+  }
   if (challengeEnd === null) {
     return (
         <View style={styles.container}>
@@ -29,6 +36,7 @@ export default function ChallengePracticeScreen({navigation}) {
               table={table}
               series={series}
               onStart={() => setChallengeStart(new Date().getTime())}
+              onMistake={() => setChallengeFailed(true)}
               onEnd={() => setChallengeEnd(new Date().getTime())}
           />
         </View>
@@ -36,11 +44,13 @@ export default function ChallengePracticeScreen({navigation}) {
   }
   return (
       <View style={styles.container}>
-        <Text>{((challengeEnd - challengeStart) / 1000).toFixed(2)}</Text>
+        <Text>Gagné ! Tu as réussi le challenge de la table des {table}
+        en {((challengeEnd - challengeStart) / 1000).toFixed(2)} secondes.
+        </Text>
       </View>
   );
 
 }
 ChallengePracticeScreen.navigationOptions = ({navigation}) => ({
-  title: `Table des ${navigation.getParam('table')}`,
+  title: `Challenge de la table des ${navigation.getParam('table')}`,
 });
