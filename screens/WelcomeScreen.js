@@ -38,3 +38,6 @@ export default function WelcomeScreen({ navigation }) {
   );
 }
 
+WelcomeScreen.navigationOptions = {
+  headerShown: false,
+};
