@@ -33,16 +33,15 @@ export default function Series ({
     isCorrectAnswer,
   } = useOperationsSeries({ series, table });
   useEffect(() => {
-    if (!seriesComplete) {
+    if (isCorrectAnswer === false) {
+      onMistake();
+    } else if (!seriesComplete) {
       nextQuestion();
     } else {
       onEnd();
     }
   });
   const feedback = getFeedback(isCorrectAnswer);
-  if (isCorrectAnswer === false) {
-    onMistake();
-  }
   useEffect(onStart, []);
   return(
     <View style={{

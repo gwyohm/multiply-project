@@ -3,10 +3,13 @@ import {
   Button,
   Text,
   View,
+  ImageBackground,
 } from 'react-native';
 
 import styles from '../styles';
 import Series from '../components/Series';
+import win from '../assets/images/win.png'
+import lost from '../assets/images/lost.png'
 
 function shuffle(unshuffled) {
   const shuffled = unshuffled.slice();
@@ -25,8 +28,12 @@ export default function ChallengePracticeScreen({navigation}) {
   const series = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   if (challengeFailed) {
     return (
-      <View style={styles.container}>
-        <Text>Perdu !</Text>
+      <View style={{flex: 1}}>
+        <ImageBackground source={lost} style={{width: '100%', height: '100%'}}>
+          <View style={styles.container}>
+
+          </View>
+        </ImageBackground>
       </View>);
   }
   if (challengeEnd === null) {
@@ -43,10 +50,17 @@ export default function ChallengePracticeScreen({navigation}) {
     );
   }
   return (
-      <View style={styles.container}>
-        <Text>Gagné ! Tu as réussi le challenge de la table des {table}
-        en {((challengeEnd - challengeStart) / 1000).toFixed(2)} secondes.
-        </Text>
+      <View style={{flex: 1}}>
+        <ImageBackground source={win} style={{width: '100%', height: '100%'}}>
+          <View style={{...styles.container, flexDirection: 'column-reverse'}}>
+            <View style={{flex: 2}}>
+              <Text style={{fontSize: 26, flex: 1, color: '#fff', textAlign: 'center'}}>
+                Tu as réussi le challenge de la table des {table} en {((challengeEnd - challengeStart) / 1000).toFixed(1)} secondes.
+              </Text>
+            </View>
+            <View style={{flex: 6}}/>
+          </View>
+        </ImageBackground>
       </View>
   );
 
